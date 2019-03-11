@@ -1,0 +1,23 @@
+<div> 
+  <div>
+    <label>username:
+      <input [(ngModel)]="user.username" placeholder="username">
+    </label>
+  </div>
+
+  <div>
+    <label>password:
+      <input [(ngModel)]="user.password" placeholder="password">
+    </label>
+  </div>
+  <div>
+    <button (click)="onSignIn()" >Sign in</button>
+  </div>
+  <div *ngIf="token !=='' ">
+    <div>{{token}}</div>
+  </div>
+
+  <div *ngIf="errorMessage !=='' ">
+    <div>{{errorMessage}}</div>
+  </div>
+</div>
