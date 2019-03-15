@@ -1,0 +1,15 @@
+
+
+<div>
+  <div *ngIf="cart != null" > 
+    
+      <div *ngFor = "let item of cart.items">
+        <p>Id: {{item.id}}</p>
+        <p>Amount: {{item.amount}}</p>
+        <br>
+      </div>
+
+      <button (click)="deleteCart()">Delete cart</button>
+    
+  </div>
+</div>

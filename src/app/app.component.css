@@ -1,0 +1,43 @@
+.menubar {
+    display:grid;
+    grid-template-columns: 1fr 4fr 1fr 1fr;
+    grid-template-rows:auto;
+    justify-items: stretch;
+    align-items:stretch;
+    text-align:center;
+    background-color:#00bfa5;
+    height:40px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.products{
+    grid-column:3/4;
+}
+
+.mycart{
+    grid-column:4/5;
+}
+
+.menubar >div {
+    display:grid;
+}
+
+.menubar a{
+    color: black;
+    text-decoration: none;
+    display:block;
+    justify-self: center;
+    align-self: center;
+}
+
+
+
+.menubar  > div:hover{
+    background-color: rgb(0,171,150);
+}
+
+.menubar div:hover {
+    cursor:pointer;
+}
+

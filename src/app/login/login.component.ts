@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   errorMessage:string;
 
   onSignIn(): void {
+    console.log(this.user);
     //TODO : make service that tries to logs user in, store the token for this user
     //TODO : aftersuccesful login redirect to dashboard where user can see his/her cart
     this.authService.attemptSignIn(this.user)
