@@ -1,0 +1,35 @@
+
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #00bfa5;
+    -webkit-box-shadow: 0 1px 0 0 #00bfa5;
+    box-shadow: 0 1px 0 0 #00bfa5;
+}
+
+.btn {
+    display:block;
+    background-color:#00bfa5;
+    color:black;
+    margin:auto 0px;
+}
+
+.btn:hover{
+    background-color:rgb(0,171,150);
+}
+
+
+
+div.button-to-center{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    justify-items: center;
+}
+
+div.mainpart{
+    padding-top: 30px;
+}
+
+td.image-td{
+    padding-top:3px;
+    padding-bottom:3px;
+}

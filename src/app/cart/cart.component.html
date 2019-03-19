@@ -1,15 +1,51 @@
 
 
-<div>
-  <div *ngIf="cart != null" > 
-    
+<div class="mainpart">
+  <div *ngIf="joinedCollections != null" > 
+      <!--
       <div *ngFor = "let item of cart.items">
         <p>Id: {{item.id}}</p>
         <p>Amount: {{item.amount}}</p>
         <br>
       </div>
+      -->
 
-      <button (click)="deleteCart()">Delete cart</button>
+      <table>
+        <thead>
+          <tr>
+              <th>ItemId</th>
+              <th>Quantity</th>
+              <th>ItemId</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Img</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor = "let userjoinedwithproduct of joinedCollections  ">
+              <td>{{userjoinedwithproduct?.cart?.items?.id}}</td>
+              <td>{{userjoinedwithproduct?.cart?.items?.amount}}</td>
+              <td>{{userjoinedwithproduct?.item_data[0]?.id}}</td>
+              <td>{{userjoinedwithproduct?.item_data[0]?.name}}</td>
+              <td>{{userjoinedwithproduct?.item_data[0]?.price}} EUR</td>
+              <td class="image-td"><img src={{userjoinedwithproduct?.item_data[0]?.imageUrl}}  height="70" width="70"></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+      <div class="button-to-center">
+        <button class="btn waves-effect waves-light  red accent-2" name="action" (click)="deleteCart()">Delete cart
+          <i class="material-icons right"></i>
+        </button>
+
+        <button class="btn waves-effect waves-light  " name="action" >Buy products
+            <i class="material-icons right"></i>
+        </button>
+      </div>
+      
     
   </div>
 </div>

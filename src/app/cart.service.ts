@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {CartResponse} from './models/cartresponse';
 import { DeleteCartResponse } from './models/deletecartresponse';
 import { Cart } from './models/cart';
+import { UserJoinedWithProductResponse } from './models/userjoinedwithproductresponse';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -14,6 +15,7 @@ const httpOptions = {
 })
 export class CartService {
   private cartUrl:string = 'http://localhost:3000/cart';
+  private userProductUrl : string = 'http://localhost:3000/product/userscartjoinedtoproducts';
 
   constructor(private http: HttpClient) { }
 
@@ -33,5 +35,9 @@ export class CartService {
       } 
     };
     return this.http.post<CartResponse>(this.cartUrl,formedCartBody,httpOptions);
+  }
+
+  getAllProductDataForCartItems(): Observable<UserJoinedWithProductResponse>{
+    return this.http.get<UserJoinedWithProductResponse>(this.userProductUrl);
   }
 }
