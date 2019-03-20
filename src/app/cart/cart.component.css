@@ -23,6 +23,7 @@ div.button-to-center{
     grid-template-columns:1fr 1fr;
     align-items:center;
     justify-items: center;
+    margin-top:70px;
 }
 
 div.mainpart{
@@ -32,4 +33,59 @@ div.mainpart{
 td.image-td{
     padding-top:3px;
     padding-bottom:3px;
+}
+
+div.verticallymiddle{
+    vertical-align: middle;
+}
+
+.quantitygrid{
+    display:grid;
+    grid-template-columns: 30px 30px;
+    grid-template-areas: "quantity add"
+                         "quantity  remove";
+}
+
+.placeinquantity{
+    grid-area: quantity;
+    align-self:center;
+    justify-self: center;
+}
+
+.placeinadd{
+    grid-area: add;
+    align-self:start;
+}
+
+
+
+.placeinremove{
+    grid-area: remove;
+    align-self:end;
+}
+
+.material-icons{
+    vertical-align: middle;
+}
+
+.material-icons:hover{
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.redicon{
+    color:indianred;
+}
+
+.greenicon{
+    color:green;
+}
+
+button.redbutton{
+    background-color:indianred;
+    
+}
+
+.redbutton:hover{
+    background-color:red;
 }

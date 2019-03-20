@@ -37,6 +37,14 @@ export class CartService {
     return this.http.post<CartResponse>(this.cartUrl,formedCartBody,httpOptions);
   }
 
+  updateCart(itemId : string, amount: Number): Observable<any>{
+    return this.http.put(this.cartUrl,{itemId: itemId, amount:amount},httpOptions);
+  }
+
+  deleteCartItemById(itemId: string): Observable<any>{
+    return this.http.delete<any>(this.cartUrl + "/" + itemId ,httpOptions);
+  }
+
   getAllProductDataForCartItems(): Observable<UserJoinedWithProductResponse>{
     return this.http.get<UserJoinedWithProductResponse>(this.userProductUrl);
   }

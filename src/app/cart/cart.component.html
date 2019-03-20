@@ -13,23 +13,40 @@
       <table>
         <thead>
           <tr>
-              <th>ItemId</th>
-              <th>Quantity</th>
-              <th>ItemId</th>
+              <!--<th>ItemId</th>-->
               <th>Name</th>
+              <th></th>
+              <!--<th>ItemId</th>-->
+              <th>Quantity</th>
               <th>Price</th>
-              <th>Img</th>
+              <th></th>
+              
           </tr>
         </thead>
 
         <tbody>
           <tr *ngFor = "let userjoinedwithproduct of joinedCollections  ">
-              <td>{{userjoinedwithproduct?.cart?.items?.id}}</td>
-              <td>{{userjoinedwithproduct?.cart?.items?.amount}}</td>
-              <td>{{userjoinedwithproduct?.item_data[0]?.id}}</td>
+              <!--<td>{{userjoinedwithproduct?.cart?.items?.id}}</td>-->
               <td>{{userjoinedwithproduct?.item_data[0]?.name}}</td>
-              <td>{{userjoinedwithproduct?.item_data[0]?.price}} EUR</td>
               <td class="image-td"><img src={{userjoinedwithproduct?.item_data[0]?.imageUrl}}  height="70" width="70"></td>
+              <td>
+                <div class=quantitygrid>
+                  <div class="placeinquantity">{{userjoinedwithproduct?.cart?.items?.amount}}</div>
+                  
+                  <div class="placeinadd verticallymiddle">
+                    <i class="tiny material-icons greenicon" (click)="incrementQuantityForItem(userjoinedwithproduct?.item_data[0]?.id)">add</i>
+                  </div>
+                  <div class="placeinremove verticallymiddle">
+                    <i class="tiny material-icons redicon" (click)="decrementQuantityForItem(userjoinedwithproduct?.item_data[0]?.id)">remove</i>
+                  </div>
+                  
+                </div>
+              </td>
+              <!--<td>{{userjoinedwithproduct?.item_data[0]?.id}}</td>-->
+              <td>{{userjoinedwithproduct?.item_data[0]?.price}} EUR</td>
+              <td>               
+                <div class="verticallymiddle"><i class="material-icons redicon" (click)="deleteItemFromCart(userjoinedwithproduct?.item_data[0]?.id)">clear</i></div>
+              </td>
           </tr>
 
         </tbody>
@@ -37,7 +54,7 @@
 
 
       <div class="button-to-center">
-        <button class="btn waves-effect waves-light  red accent-2" name="action" (click)="deleteCart()">Delete cart
+        <button class="btn waves-effect waves-light  redbutton" name="action" (click)="deleteCart()">Delete cart
           <i class="material-icons right"></i>
         </button>
 

@@ -10,7 +10,7 @@ const routes: Routes = [
    component: LoginComponent
   },
   {
-    path:'dashboard',
+    path:'allproducts',
     component: DashboardComponent,
     pathMatch: 'full', 
     canActivate: [AuthGuard]

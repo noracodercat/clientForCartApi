@@ -1,0 +1,24 @@
+.product-container{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-flow:dense;
+    justify-items: center;
+    
+}
+
+.card-image{
+    width:100%;
+}
+
+.imgwidth{
+    display:block;
+
+    max-height:300px;
+    max-width:400px;
+    height:auto;
+    width:auto !important;
+}
+
+
+

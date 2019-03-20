@@ -1,3 +1,41 @@
-<p>
-  dashboard works!
-</p>
+<div>
+<!--
+  <div *ngIf="products !=null">
+    <table>
+      <thead>
+          <th>Name</th>
+          <th>Weight</th>
+          <th>Price</th>
+          <th>Img</th>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{product.name}}</td>
+          <td>{{product.weightInG}}</td>
+          <td>{{product.price}}</td>
+          <td><img src={{product.imageUrl}}  height="70" width="70"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+-->
+<div class="product-container" *ngIf="products !=null">
+  <div class="row" *ngFor="let product of products">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-image">
+            <img class="imgwidth" src={{product.imageUrl}} >
+            <span class="card-title">{{product.name}}</span>
+            <a class="btn-floating halfway-fab waves-effect waves-light red"  (click)="putIntoCart(product.id)">
+              <i class="material-icons">add</i>
+            </a>
+          </div>
+          <div class="card-content">
+            <p>{{product.weightInG}} g</p>
+            <p>{{product.price}} EUR</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

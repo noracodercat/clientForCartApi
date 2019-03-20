@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       username: "",
       password: ""
     };
-    this.dashboardUrl ='dashboard';
+    this.dashboardUrl ='allproducts';
     this.errorMessage ="";
     this.authService.logout();
   }
